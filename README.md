@@ -14,16 +14,6 @@ It tracks income, savings, and expenses across multiple months/years and helps v
 
 ---
 
-## 📁 Project Files
-
-| File                         | Description                                                     |
-|------------------------------|-----------------------------------------------------------------|
-| `Finance Dashboard.pbix`     | Main Power BI report / dashboard file                          |
-| `Finance Database.xlsx`      | Source data file used to feed the Power BI model               |
-| `README.md`                  | Project documentation (this file)                              |
-
----
-
 ## 🛠 Data Preparation Steps
 
 The Excel file was cleaned and transformed before and/or inside Power BI:
@@ -129,7 +119,3 @@ If Power BI cannot locate your Excel file:
 
 ---
 
-
-
-Expense % =
-DIVIDE ( [Total Expense], [Total Income] )
