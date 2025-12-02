@@ -1,76 +1,135 @@
-# Personal-Finance-Dashboard
-📊 Personal Finance Dashboard — Power BI
+# 📊 Personal Finance Dashboard — Power BI
 
-This project is a fully interactive Finance Dashboard built using Excel + Power BI.
-It tracks income, savings, expenses, and spending patterns over several years.
+This repository contains a complete **Personal Finance Dashboard** built using **Excel + Power BI**.  
+It tracks income, savings, and expenses across multiple months/years and helps visualize spending patterns and savings performance.
 
-🔧 Tools Used
+---
 
-Power BI Desktop
+## 🔧 Tools & Technologies
 
-Excel
+- **Power BI Desktop**
+- **Microsoft Excel**
+- **Power Query**
+- **DAX (Data Analysis Expressions)**
 
-Power Query
+---
 
-DAX
+## 📁 Project Files
 
-📁 Files Included
-File	Description
-Finance Dashboard.pbix	Full Power BI dashboard file
-Finance Database.xlsx	Cleaned and structured dataset
-README.md	Project documentation
-🛠 Data Preparation
+| File                         | Description                                                     |
+|------------------------------|-----------------------------------------------------------------|
+| `Finance Dashboard.pbix`     | Main Power BI report / dashboard file                          |
+| `Finance Database.xlsx`      | Source data file used to feed the Power BI model               |
+| `README.md`                  | Project documentation (this file)                              |
 
-✔ Fixed Month-Year date headers
-✔ Converted text dates → real dates
-✔ Unpivoted Excel data for Power BI modeling
-✔ Built a clean fact table structure
+---
 
-📈 Key Features of the Dashboard
+## 🛠 Data Preparation Steps
 
-Total Income, Savings & Expenses
+The Excel file was cleaned and transformed before and/or inside Power BI:
 
-Expense breakdown by component
+1. **Fixed Month–Year Headers**
+   - Converted headers like `Jan-18`, `Feb-18`… from text into real date values.
+   - Ensured years (2018, 2019, 2020, 2021, etc.) are correctly recognized in Power BI.
 
-Year-over-year trends
+2. **Unpivoted Data**
+   - Original sheet was in a wide format (one column per month).
+   - Using **Power Query**, the data was unpivoted into a long format with:
+     - `Type`
+     - `Component`
+     - `Date`
+     - `Value` (amount)
 
-Savings % and Expense %
+3. **Data Types & Formatting**
+   - Set proper data types: `Date` for dates, `Text` for categories, `Decimal/Whole Number` for values.
+   - Checked for missing / inconsistent values and corrected them where required.
 
-Slicers for Type, Component, Date
+---
 
-Fully refreshable via updated Excel file
+## ## 📈 Dashboard Features
 
-🧮 DAX Measures Created
+The Power BI report includes the following:
 
-Total Income
+### ⭐ KPI Cards
+- **Total Income**
+- **Total Savings**
+- **Total Expenses**
+- **Savings %** and **Expense %**
 
-Total Savings
+### 📊 Visuals
+- **Bar Chart:** Total Expense by Component  
+- **Trend Line:** Income / Savings / Expense over time  
+- **Category Breakdown:** Spending classifications by type and component  
 
-Total Expense
+### 🎛 Interactivity
+- **Slicers** for:
+  - Date / Year  
+  - Type (Income, Savings, Expense)  
+  - Component (Rent, Groceries & Food, Salary, Mutual Funds, etc.)  
+- Dynamic filtering of visuals based on selected components and time period.
 
-Savings %
+---
 
-Expense %
+## 🚀 How to Open & Use This Project
 
-Monthly Spend Trends
+### 1️⃣ Download the files
+- `Finance Dashboard.pbix`
+- `Finance Database.xlsx`
 
-🎯 Insights
+### 2️⃣ Open the Power BI report
+- Double-click **Finance Dashboard.pbix** to open in **Power BI Desktop**.
 
-Understand monthly and yearly financial behavior
+### 3️⃣ Update the data source path (if needed)
+If Power BI cannot locate your Excel file:
+1. Go to **Home → Transform data → Data source settings**
+2. Select the Excel file source  
+3. Click **Change Source**
+4. Choose the correct location of `Finance Database.xlsx`
+5. Click **OK → Close → Apply**
 
-Identify major spending categories
+### 4️⃣ Refresh the report
+- Click **Refresh** under the **Home** tab to load the latest data from Excel.
 
-Track progress for savings goals
+### 5️⃣ Explore the dashboard
+- Use slicers to filter by **Year**, **Type**, or **Component**  
+- Hover over charts to see detailed tooltips  
+- Examine trends to understand:
+  - Which components contribute most to expenses  
+  - How savings change month-over-month  
+  - Major spending patterns  
 
-Manage and compare expenses effectively
+---
 
-💡 How to Use
+## 🎯 Learnings & Skills Demonstrated
 
-Download the .pbix file
+- **Excel Data Cleaning**  
+  - Managed raw personal finance data  
+  - Fixed Month–Year headers  
+  - Corrected date structures and formatting  
 
-Download the dataset .xlsx
+- **Power Query (ETL skills)**  
+  - Converted text dates to real dates  
+  - Unpivoted wide-format data into long-format  
+  - Created a clean tabular structure for analysis  
 
-Open the PBIX file
+- **Power BI Data Modeling**  
+  - Built a star-schema–friendly structure  
+  - Created a dedicated **Key Measures** table  
+  - Set correct data types and relationships  
 
-If the data doesn’t load, update the file path through:
- Transform Data → Data Source Settings → Change Source
+- **DAX Measures**  
+  - Created KPIs: Total Income, Total Savings, Total Expense  
+  - Calculated Savings % and Expense %  
+  - Implemented dynamic filtering logic  
+
+- **Dashboard Design & Data Storytelling**  
+  - Built interactive visuals  
+  - Added intuitive slicers  
+  - Created meaningful financial insights  
+
+---
+
+
+
+Expense % =
+DIVIDE ( [Total Expense], [Total Income] )
